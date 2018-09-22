@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Lista de Tarefas</title>
-<script type="text/javascript" src="index.js"></script>
 </head>
 <body>
     <header>
@@ -11,8 +10,24 @@
         <p>por Haniel H. M. Ferreira, 2018</p>
     </header>
     <main>
-        <nav id="menus">
-        </nav>
+        <section id="newtask">
+            <form name='newtaskform'>
+                <label for="nome">Nome</label>
+                <input id="nome" type="text" placeholder="digite o nome da nova tarefa">
+                <input type="button" onclick="adicionarNovaTarefa()" value="Adicionar Nova Tarefa">
+            </form>
+        </section>
+        <section id="todo">
+
+        </section>
+        <section id="doing">
+
+        </section>
+        <section id="done">
+
+        </section>
     </main>
+
+    <script type="text/javascript" src="index.js"></script>
 </body>
 </html>
