@@ -1,12 +1,20 @@
 'use strict'
 
 let tarefasToDo = [];
+let tarefasDoing = [];
+let tarefasDone = [];
+
+document.getElementById("addnovatarefa").addEventListener('click', adicionarNovaTarefa);
+
+var createNewTaskCard = function(TaskName) {
+    
+}
 
 function adicionarNovaTarefa() {
     var tarefa = document.getElementById('nome').value;
-    console.log("qualquer coisa" + tarefa);
     tarefasToDo.push(tarefa);
-    document.getElementById('todo').innerHTML = listItens(tarefasToDo);
+    var taskList = document.getElementById('todo').lastElementChild;
+    taskList.innerHTML = listItens(tarefasToDo);
 }
 
 function listItens(itens) {

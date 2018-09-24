@@ -3,31 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <title>Lista de Tarefas</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
     <header>
-        <h1>To Do List</h1>
-        <p>por Haniel H. M. Ferreira, 2018</p>
+        <h1>Trello</h1>
     </header>
     <main>
-        <section id="newtask">
+        <section id="newtask" class="newtask">
             <form name='newtaskform'>
-                <label for="nome">Nome</label>
-                <input id="nome" type="text" placeholder="digite o nome da nova tarefa">
-                <input type="button" onclick="adicionarNovaTarefa()" value="Adicionar Nova Tarefa">
+                <fieldset>
+                    <legend>Nova tarefa</legend>
+                    <label for="nome">Nome da tarefa</label>
+                    <input id="nometarefa" type="text" placeholder="digite o nome da nova tarefa"><br />
+                    <label for="descricaotarefa">Decrição da tarefa</label>
+                    <textarea id="descricaotarefa" placeholder="escreva uma descrição sucinta da tarefa" rows="4" cols="56"></textarea><br />
+                    <label for="nomeencarregado">Nome do encarregado</label>
+                    <input id="nomeencarregado" type="text" placeholder="digite o nome do encarregado da tarefa"><br />
+                    <label for="dataconcluir">Nome do encarregado</label>
+                    <input id="dataconcluir" type="date" pattern="__/__/___"><br />
+                    <input type="button" id="addnovatarefa" value="Adicionar Nova Tarefa">
+                </fieldset>
             </form>
         </section>
         <section id="todo">
+            <h2>To Do</h2>
+            <div class="tasklist">
 
+            </div>
         </section>
-        <section id="doing">
-
+        <section id="doing" class="list">
+            <h2>Doing</h2>
+            <div class="tasklist">
+                
+            </div>
         </section>
-        <section id="done">
-
+        <section id="done" class="list">
+            <h2>Done</h2>
+            <div class="tasklist">
+                
+            </div>
         </section>
     </main>
 
-    <script type="text/javascript" src="index.js"></script>
+    <footer>
+        <p>por Haniel H. M. Ferreira, 2018</p>
+    </footer>
+
+    <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
