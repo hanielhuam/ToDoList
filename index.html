@@ -14,34 +14,31 @@
             <form name='newtaskform'>
                 <fieldset>
                     <legend>Nova tarefa</legend>
-                    <label for="nome">Nome da tarefa</label>
+                    <label for="nometarefa">Nome da tarefa</label>
                     <input id="nometarefa" type="text" placeholder="digite o nome da nova tarefa"><br />
                     <label for="descricaotarefa">Decrição da tarefa</label>
                     <textarea id="descricaotarefa" placeholder="escreva uma descrição sucinta da tarefa" rows="4" cols="56"></textarea><br />
                     <label for="nomeencarregado">Nome do encarregado</label>
                     <input id="nomeencarregado" type="text" placeholder="digite o nome do encarregado da tarefa"><br />
-                    <label for="dataconcluir">Nome do encarregado</label>
-                    <input id="dataconcluir" type="date" pattern="__/__/___"><br />
+                    <label for="dataconcluir">data para concluir a tarefa</label>
+                    <input id="dataconcluir" type="date"><br />
                     <input type="button" id="addnovatarefa" value="Adicionar Nova Tarefa">
                 </fieldset>
             </form>
         </section>
-        <section id="todo">
+        <section>
             <h2>To Do</h2>
-            <div class="tasklist">
-
+            <div id="todo">
             </div>
         </section>
-        <section id="doing" class="list">
+        <section>
             <h2>Doing</h2>
-            <div class="tasklist">
-                
+            <div id="doing">
             </div>
         </section>
-        <section id="done" class="list">
+        <section>
             <h2>Done</h2>
-            <div class="tasklist">
-                
+            <div id="done">
             </div>
         </section>
     </main>
