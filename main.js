@@ -19,10 +19,11 @@ window.onload = function () {
 }
 
 function addNewTask() {
+    conole.log("entrou aqui");
     let task = taskFactory();
     addTaskToToDoList(task);
     insertTask(task);
-}
+}   
 
 function taskFactory() {
     let nomeTarefa = document.getElementById('nometarefa').value;

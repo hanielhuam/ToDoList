@@ -5,8 +5,10 @@
         fclose($myfile);
     }
     elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $myfile = fopen("tasks.json", "w") or die("Unable to open file!");
-        echo json_encode(fread($myfile,filesize("tasks.json")));
-        fclose($myfile);
+        $list = $_POST['lists'];
+
+        $file = fopen("tasks.json", "w") or die("Unable to open file!");
+        fwrite($file, $lists);
+        fclose($file);
     }
 ?>
