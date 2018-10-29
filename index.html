@@ -1,10 +1,13 @@
-<!DOCTYPE HTML>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html>
 <head>
-<meta charset="UTF-8">
-<title>Lista de Tarefas</title>
-<link rel="stylesheet" type="text/css" href="style.css" />
-<link rel="stylesheet" type="text/css" href="w3.css" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ToDoList</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/w3.css" />
+    <script src="main.js"></script>
 </head>
 <body class="w3-indigo">
     <header class="w3-black">
@@ -12,9 +15,9 @@
     </header>
     <main>
         <section id="newtask" class="newtask">
-            <form name='newtaskform'>
+            <form action="handleTask.php" method="POST">
                 <fieldset>
-                    <legend>Nova tarefa</legend>
+                    <legend>Nova Tarefa</legend>
                     <label for="nometarefa">Nome da tarefa</label>
                     <input id="nometarefa" type="text" placeholder="digite o nome da nova tarefa"><br />
                     <label for="descricaotarefa">Decrição da tarefa</label>
@@ -23,31 +26,25 @@
                     <input id="nomeencarregado" type="text" placeholder="digite o nome do encarregado da tarefa"><br />
                     <label for="dataconcluir">data para concluir a tarefa</label>
                     <input id="dataconcluir" type="date"><br />
-                    <input type="button" id="addnovatarefa" value="Adicionar Nova Tarefa">
-                </fieldset>
-            </form>
+                    <input type="button" id="addNewTask" value="Adicionar Nova Tarefa" onclick="addNewTask()">
+                 </fieldset>
+             </form>
         </section>
         <section>
-            <h2>To Do</h2>
-            <div id="todo">
-            </div>
+            <h1>To Do</h1>
+            <div id="todo"></div>
         </section>
         <section>
-            <h2>Doing</h2>
-            <div id="doing">
-            </div>
+            <h1>Doing</h1>
+            <div id="doing"></div>
         </section>
         <section>
-            <h2>Done</h2>
-            <div id="done">
-            </div>
+                <h1>Done</h1>
+                <div id="done"></div>
         </section>
     </main>
-
     <footer class="w3-black">
-        <p>por Haniel H. M. Ferreira, 2018</p>
+        <p>Copyright &copy; Haniel Huam</p>
     </footer>
-
-    <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
