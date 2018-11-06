@@ -8,7 +8,7 @@
         $list = $_POST['lists'];
 
         $file = fopen("tasks.json", "w") or die("Unable to open file!");
-        fwrite($file, $lists);
+        fwrite($file, $list);
         fclose($file);
     }
 ?>

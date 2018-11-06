@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,44 +7,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./css/w3.css" />
-    <script src="main.js"></script>
 </head>
 <body class="w3-indigo">
-    <header class="w3-black">
+    <header class="w3-black w3-container">
         <h1 class="w3-center">Trello</h1>
     </header>
-    <main>
-        <section id="newtask" class="newtask">
-            <form action="handleTask.php" method="POST">
+    <main class="w3-margin-bottom">
+        <section id="newtask" class="w3-container">
+            <form>
                 <fieldset>
                     <legend>Nova Tarefa</legend>
-                    <label for="nometarefa">Nome da tarefa</label>
-                    <input id="nometarefa" type="text" placeholder="digite o nome da nova tarefa"><br />
-                    <label for="descricaotarefa">Decrição da tarefa</label>
+                    <label for="nometarefa" class="w3-col s6">Nome da tarefa</label>
+                    <input id="nometarefa" type="text" placeholder="digite o nome da nova tarefa" class="w3-col s6"><br />
+                    <label for="descricaotarefa" class="w3-">Decrição da tarefa</label>
                     <textarea id="descricaotarefa" placeholder="escreva uma descrição sucinta da tarefa" rows="4" cols="56"></textarea><br />
                     <label for="nomeencarregado">Nome do encarregado</label>
                     <input id="nomeencarregado" type="text" placeholder="digite o nome do encarregado da tarefa"><br />
                     <label for="dataconcluir">data para concluir a tarefa</label>
                     <input id="dataconcluir" type="date"><br />
-                    <input type="button" id="addNewTask" value="Adicionar Nova Tarefa" onclick="addNewTask()">
+                    <input type="button" id="addNewTask" value="Adicionar Nova Tarefa">
                  </fieldset>
              </form>
         </section>
-        <section>
+        <section class="w3-container">
             <h1>To Do</h1>
             <div id="todo"></div>
         </section>
-        <section>
+        <section class="w3-container">
             <h1>Doing</h1>
             <div id="doing"></div>
         </section>
-        <section>
+        <section class="w3-container">
                 <h1>Done</h1>
                 <div id="done"></div>
         </section>
     </main>
-    <footer class="w3-black">
+    <footer class="w3-black w3-container">
         <p>Copyright &copy; Haniel Huam</p>
     </footer>
+    <script src="main.js"></script>
 </body>
 </html>

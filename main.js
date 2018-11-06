@@ -16,10 +16,12 @@ window.onload = function () {
     }
     xmlHttp.open("GET", "getJson.php", true);
     xmlHttp.send();
+
+    document.getElementById("addNewTask").addEventListener("click", addNewTask);
 }
 
 function addNewTask() {
-    conole.log("entrou aqui");
+    
     let task = taskFactory();
     addTaskToToDoList(task);
     insertTask(task);
@@ -54,8 +56,10 @@ function insertTask(task) {
     jsonLists = JSON.stringify(lists);
 
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("POST", "getJson.php?lists=" + jsonLists, true);
-    xmlHttp.send();
+    xmlHttp.open("POST", "getJson.php", true);
+    xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    xmlHttp.send("lists=" + jsonLists);
 }
 
 function showTasksOnBoard() {
@@ -70,9 +74,9 @@ function showTasksOnBoard() {
 }
 
 function createCard(task) {
-    console.log(task);
     var card = document.createElement("div");
-    card.className = "w3-card";
+    card.className = "w3-card w3-yellow w3-display-container";
+    card.setAttribute("draggable","true");
 
     var list = document.createElement("ul");
     var listItenNome = document.createElement("li");
@@ -87,13 +91,17 @@ function createCard(task) {
     list.appendChild(listItenDescricao);
     list.appendChild(listItenEncarregado);
     list.appendChild(listItenData);
+    list.className = "w3-padding";
+
+    var deleteButton = document.createElement("button");
+    deleteButton.addEventListener("click", excluir);
+    deleteButton.innerHTML = "&times";
+    deleteButton.className = "w3-button w3-red w3-display-topright";
 
     var addButton = document.createElement("button");
     addButton.addEventListener("click", adicionar);
-    addButton.value = "Adicionar";
-    var deleteButton = document.createElement("button");
-    deleteButton.addEventListener("click", excluir);
-    addButton.value = "Excluir";
+    addButton.innerHTML = "Editar";
+    addButton.className = "w3-button w3-blue w3-display-bottomright";
 
     card.appendChild(list);
     card.appendChild(addButton);
@@ -105,9 +113,6 @@ function createCard(task) {
 function showTasksOnSetion(section, list) {
     var i;
     for(i = 0; i < list.length; i++) {
-        console.log(i);
-        console.log(list[i]);
-        //console.log(list[i].nome);
         section.appendChild(createCard(list[i]));
     }
 }
